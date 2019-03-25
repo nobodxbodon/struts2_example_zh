@@ -10,7 +10,7 @@
             <generator class="identity" />
         </id>
         <property name="name" type="string">
-            <column name="NAME" length="45" not-null="true" />
+            <column name="姓名" length="45" not-null="true" />
         </property>
         <property name="address" type="string">
             <column name="ADDRESS" not-null="true" />
