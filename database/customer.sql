@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS `mkyong`.`顾客`;
-CREATE TABLE  `mkyong`.`顾客` (
+DROP TABLE IF EXISTS `演示`.`顾客`;
+CREATE TABLE  `演示`.`顾客` (
   `顾客_ID` bigint(20) unsigned COLLATE utf8_unicode_ci NOT NULL AUTO_INCREMENT,
   `姓名` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `ADDRESS` varchar(255) NOT NULL,

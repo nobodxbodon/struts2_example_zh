@@ -4,7 +4,7 @@
 <!-- Generated 20 Julai 2010 11:40:18 AM by Hibernate Tools 3.2.5.Beta -->
 <hibernate-mapping>
     <class name="com.mkyong.customer.model.Customer" 
-		table="顾客" catalog="mkyong">
+		table="顾客" catalog="演示">
         <id name="customerId" type="java.lang.Long">
             <column name="顾客_ID" />
             <generator class="identity" />
