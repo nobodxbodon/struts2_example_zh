@@ -13,10 +13,10 @@
             <column name="姓名" length="45" not-null="true" />
         </property>
         <property name="address" type="string">
-            <column name="ADDRESS" not-null="true" />
+            <column name="地址" not-null="true" />
         </property>
         <property name="createdDate" type="timestamp">
-            <column name="CREATED_DATE" length="19" not-null="true" />
+            <column name="创建日期" length="19" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>
