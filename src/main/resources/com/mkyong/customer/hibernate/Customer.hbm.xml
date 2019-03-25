@@ -6,7 +6,7 @@
     <class name="com.mkyong.customer.model.Customer" 
 		table="顾客" catalog="mkyong">
         <id name="customerId" type="java.lang.Long">
-            <column name="CUSTOMER_ID" />
+            <column name="顾客_ID" />
             <generator class="identity" />
         </id>
         <property name="name" type="string">
