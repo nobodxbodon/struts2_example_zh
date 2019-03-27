@@ -1,5 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ page pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
 </head>
@@ -9,7 +9,7 @@
 
 <h2>Add Customer</h2>
 <s:form action="addCustomerAction" >
-  <s:textfield name="姓名" label="Name" value="" />
+  <s:textfield name="姓名" label="姓名" value="" />
   <s:textarea name="address" label="Address" value="" cols="50" rows="5" />
   <s:submit />
 </s:form>

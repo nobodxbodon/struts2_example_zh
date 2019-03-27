@@ -2,6 +2,8 @@
 
 ### 环境搭建
 
+Java 1.8.0_45, MySQL 5.5.24, Apache Maven 3.3.3
+
 1. 构建生成WAR包: `$ mvn install`
 2. 拷贝到tomcat的webapps下
 3. 启动tomcat
@@ -26,3 +28,36 @@ org.apache.catalina.core.StandardContext.startInternal One or more listeners fai
 CLASSPATH=lib/mysql-connector-java-5.1.9.jar:$CLASSPATH
 ```
 - 重启Tomcat
+
+### 中文命名
+
+改数据库表与字段名成功
+
+#### 未解决问题
+
+修改模型属性名`name`->`姓名`后, 未改`Customer`的get/set方法名和JSP的对应属性名:
+```
+java.lang.NullPointerException
+    com.mkyong.customer.action.CustomerAction.listCustomer(CustomerAction.java:71)
+```
+
+添加记录时报错:
+```
+ org.hibernate.PropertyValueException: not-null property references a null or transient value: com.mkyong.customer.model.Customer.?? 
+```
+
+将请求内容设置为UTF-8格式, 原本为ISO-xxxx. 参考[这里](https://stackoverflow.com/questions/12220483/how-to-change-charset-in-struts2-to-utf-8)
+
+struts2-core 从2.1.5升级到2.3.37仍报错:
+```
+org.hibernate.PropertyValueException: not-null property references a null or transient value: com.mkyong.customer.model.Customer.姓名
+```
+不确定是否有关:
+```
+14413 [http-nio-8080-exec-95] WARN  com.opensymphony.xwork2.interceptor.ParametersInterceptor  - Parameter [姓名] didn't match accepted pattern [[\w+((\.\w+)|(\[\d+\])|(\(\d+\))|(\['(\w|[\u4e00-\u9fa5])+'\])|(\('(\w|[\u4e00-\u9fa5])+'\)))*]]!
+```
+ 
+### 其他
+
+- Struts 2.3.37升级到2.5.20, 参考[官方文档](https://cwiki.apache.org/confluence/display/WW/Struts+2.3+to+2.5+migration)
+- 添加日志, 参考[这里](https://stackoverflow.com/questions/12532339/no-appenders-could-be-found-for-loggerlog4j)
