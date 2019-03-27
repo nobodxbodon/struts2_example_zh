@@ -31,7 +31,39 @@ CLASSPATH=lib/mysql-connector-java-5.1.9.jar:$CLASSPATH
 
 ### 中文命名
 
-改数据库表与字段名成功
+改数据库表与字段名成功:
+
+```sql
+DROP TABLE IF EXISTS `演示`.`顾客`;
+CREATE TABLE  `演示`.`顾客` (
+  `顾客_ID` bigint(20) unsigned COLLATE utf8_unicode_ci NOT NULL AUTO_INCREMENT,
+  `姓名` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `地址` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `创建日期` datetime COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`顾客_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
+```
+
+```xml
+<hibernate-mapping>
+    <class name="com.mkyong.customer.model.Customer"
+        table="顾客" catalog="演示">
+        <id name="customerId" type="java.lang.Long">
+            <column name="顾客_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="姓名" type="string">
+            <column name="姓名" length="45" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="地址" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="创建日期" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
+```
 
 #### 未解决问题
 
