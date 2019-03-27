@@ -9,7 +9,7 @@
 
 <h2>Add Customer</h2>
 <s:form action="addCustomerAction" >
-  <s:textfield name="姓名" label="姓名" value="" />
+  <s:textfield name="name" label="姓名" value="" />
   <s:textarea name="address" label="Address" value="" cols="50" rows="5" />
   <s:submit />
 </s:form>
@@ -27,7 +27,7 @@
 	<s:iterator value="customerList" status="userStatus">
 		<tr>
 			<td><s:property value="customerId" /></td>
-			<td><s:property value="姓名" /></td>
+			<td><s:property value="name" /></td>
 			<td><s:property value="address" /></td>
 			<td><s:date name="createdDate" format="dd/MM/yyyy" /></td>
 		</tr>

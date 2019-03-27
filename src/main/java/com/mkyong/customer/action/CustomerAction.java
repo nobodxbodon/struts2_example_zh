@@ -49,7 +49,7 @@ public class CustomerAction extends ActionSupport
 		Session session = sessionFactory.openSession();
 
 		//save it
-		log.info("添加记录 姓名: " + customer.get姓名());
+		log.info("添加记录 姓名: " + customer.getName());
 		
 		customer.setCreatedDate(new Date());
 	 

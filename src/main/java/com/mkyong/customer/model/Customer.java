@@ -5,7 +5,7 @@ import java.util.Date;
 public class Customer implements java.io.Serializable {
 
 	private Long customerId;
-	private String 姓名;
+	private String name;
 	private String address;
 	private Date createdDate;
 
@@ -13,7 +13,7 @@ public class Customer implements java.io.Serializable {
 	}
 
 	public Customer(String name, String address, Date createdDate) {
-		this.姓名 = name;
+		this.name = name;
 		this.address = address;
 		this.createdDate = createdDate;
 	}
@@ -26,12 +26,12 @@ public class Customer implements java.io.Serializable {
 		this.customerId = customerId;
 	}
 
-	public String get姓名() {
-		return this.姓名;
+	public String getName() {
+		return this.name;
 	}
 
-	public void set姓名(String name) {
-		this.姓名 = name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getAddress() {
