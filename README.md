@@ -52,7 +52,7 @@ CREATE TABLE  `演示`.`顾客` (
             <column name="顾客_ID" />
             <generator class="identity" />
         </id>
-        <property name="姓名" type="string">
+        <property name="name" type="string">
             <column name="姓名" length="45" not-null="true" />
         </property>
         <property name="address" type="string">
